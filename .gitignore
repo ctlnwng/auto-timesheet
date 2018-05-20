@@ -1,4 +1,4 @@
 config.py
 geckodriver.log
 geckodriver
-
+__pycache__/
