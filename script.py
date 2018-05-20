@@ -1,14 +1,7 @@
 import config
 from splinter import Browser
-from selenium import webdriver
 
 browser = Browser()
-# browser.visit('https://my.northeastern.edu/welcome')
-# browser.click_link_by_text('Go To Login')
-
-# browser.fill('username', username)
-# browser.fill('password', password)
-# browser.find_by_name('submit').click()
 
 browser.visit('https://studentemployment.neu.edu/tsx_studentjobs.aspx')
 
@@ -31,6 +24,8 @@ def addShift(shift):
 
 for shift in config.shifts:
     addShift(shift)
+
+browser.find_link_by_text('Submit time sheet »').first.click()
 
 
 
