@@ -13,7 +13,10 @@ browser.click_link_by_text(config.jobTitle)
 
 browser.find_link_by_text('Go to time sheet').first.click()
 
-browser.visit('https://studentemployment.neu.edu/tsx_stumanagetimesheet.aspx?TsId=2984981')
+# browser.find_link_by_text('Start time sheet').first.click()
+
+# alert = browser.get_alert()
+# alert.accept()
 
 def addShift(shift):
     browser.click_link_by_text('Add New Entry')
@@ -26,6 +29,10 @@ for shift in config.shifts:
     addShift(shift)
 
 browser.find_link_by_text('Submit time sheet »').first.click()
+browser.find_by_name('Skin$body$SubmitButton').click()
+
+alert = browser.get_alert()
+alert.accept()
 
 
 
